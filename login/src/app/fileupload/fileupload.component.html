@@ -1,0 +1,37 @@
+<div style="margin: 2%;">  
+    <div class="float-sm-right" style="margin-bottom : 2px;">
+        <div style="float: right;">
+            <label style="margin: 5px; font-weight: bold;">{{username}} </label>
+            <button class="float-right" type="button" class="btn btn-warning" (click)="logout()" 
+        style="float: right; margin-bottom : 10px;">Logout</button>
+        </div>
+        
+    </div>
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Please select a JSON file</label>
+        <input class="form-control" type="file" id="formFile" (change)="setFiles($event)" >
+      </div>
+      <button type="button" class="btn btn-primary" (click)="submitFile()">Submit</button>
+    
+      <div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">userId</th>
+                <th scope="col">id</th>
+                <th scope="col">title</th>
+                <th scope="col">body</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr *ngFor="let i of data">
+                <th scope="row">{{i.userId}}</th>
+                <td>{{i.id}}</td>
+                <td>{{i.title}}</td>
+                <td>{{i.body}}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+</div>
+
